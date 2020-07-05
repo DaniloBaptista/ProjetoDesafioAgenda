@@ -32,10 +32,10 @@ export class AgendaComponentComponent implements OnInit {
   //Todas as validações se não forem de acordo não cadastra um novo usuario.
   ngOnInit(): void {}
   contatoArray: Contato[] = [
-    { id: 1, nome: 'Ryan', cpf: '694.651.261-87', endereco: 'sqn 216', telefone: 6132726098, celular: 87979879811, email: 'dandan12b@hotmail.com' },
-    { id: 2, nome: 'Ryan', cpf: '694.651.261-87', endereco: 'sqn 216', telefone: 6132726098, celular: 87979879811, email: 'dandan12b@hotmail.com' },
-    { id: 3, nome: 'Ryan', cpf: '694.651.261-87', endereco: 'sqn 216', telefone: 6132726098, celular: 87979879811, email: 'dandan12b@hotmail.com' },
-    { id: 4, nome: 'Ryan', cpf: '694.651.261-87', endereco: 'sqn 216', telefone: 6132726098, celular: 87979879811, email: 'dandan12b@hotmail.com' },
+    { id: 1, nome: 'Danilo', cpf: '456.456.456-87', endereco: 'sqn 216', telefone: 6132726098, celular: 87979879811, email: 'dandan12b@hotmail.com' },
+    { id: 2, nome: 'Fernando', cpf: '784.561.234-56', endereco: 'sqn 216', telefone: 6132726098, celular: 87979879811, email: 'dandan12b@hotmail.com' },
+    { id: 3, nome: 'Mario', cpf: '444.567.567-87', endereco: 'sqn 216', telefone: 6132726098, celular: 87979879811, email: 'dandan12b@hotmail.com' },
+    { id: 4, nome: 'Junior', cpf: '324.567.456-87', endereco: 'sqn 216', telefone: 6132726098, celular: 87979879811, email: 'dandan12b@hotmail.com' },
   ];
 
   contatoSelecionado: Contato = new Contato();
