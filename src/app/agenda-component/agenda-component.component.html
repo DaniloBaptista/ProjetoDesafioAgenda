@@ -1,0 +1,110 @@
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">
+      Agenda Desafio
+    </a>
+  </nav>
+  
+  <div class="container">
+  
+    <div class="row">
+      <div class="col-md-8 mt-4">
+  
+        <ul class="list-group">
+  
+          <li
+            *ngFor="let contato of contatoArray"
+            class="list-group-item list-group-item-action"
+            (click)="abrirParaEdicao(contato)"
+            [class.active]="contato == contatoSelecionado"
+            >
+  
+            <span class="badge badge-primary">{{ contato.id }}</span> {{ contato.nome }} - {{ contato.cpf }} - {{ contato.endereco }} - {{ contato.telefone }} - {{ contato.celular }} - {{ contato.email }}
+            
+          </li>
+  
+        </ul>
+  
+        <div class="card mt-4">
+  
+          <div class="card-body">
+            <div class="card-title">
+  
+              Insira um novo contato:
+            </div>
+            <div>
+              <label>nome</label>
+            </div>
+            <div class="form-group">
+  
+              <input pInputText ng-required="nome" [(ngModel)]="contatoSelecionado.nome" type="text"  placeholder="Insira um nome"  /> 
+            
+            </div>
+            <div>
+              <label>cpf</label>
+            </div>
+            <div class="form-group">
+  
+              <p-inputMask [(ngModel)]="contatoSelecionado.cpf" mask="999.999.999-99" placeholder="Ex.: 000.000.000-00"></p-inputMask>
+              <!--[(ngModel)]="selectedEmployee.cpf"-->
+            </div>
+            <div>
+              <label>Endereço</label>
+            </div>
+            <div class="form-group">
+  
+              <input  type="text" [(ngModel)]="contatoSelecionado.endereco" placeholder="Insira um endereço" />
+
+            </div>
+            <div>
+              <label>Telefone</label>
+            </div>
+            <div class="form-group">
+  
+              <p-inputMask  type="text" mask="(99)9999-9999" placeholder="Ex.: (99)9999-9999" [(ngModel)]="contatoSelecionado.telefone"  ></p-inputMask>
+  
+            </div>
+            <div>
+              <label>Celular</label>
+            </div>
+            <div class="form-group">
+  
+              <p-inputMask  type="text" mask="(99)99999-9999" placeholder="Ex.: (99)99999-9999" [(ngModel)]="contatoSelecionado.celular"  ></p-inputMask>
+  
+            </div>
+            <div>
+              <label>Email</label>
+            </div>
+            <div class="form-group">
+  
+              <input  [(ngModel)]="contatoSelecionado.email" placeholder="Insira um Email" />
+  
+            </div>
+  
+            <button (click)="adicionarOuEditar()" class="btn btn-primary mr-2">
+  
+              Submit
+  
+            </button>
+  
+            <button
+              class="btn btn-danger"
+              *ngIf="contatoSelecionado.id !== 0"
+              (click)="deletar()"
+              >
+              Deletar
+  
+            </button>
+          </div>
+  
+        </div>
+  
+      </div>
+      <div class="col-md-4">
+  
+        <img width="300" alt="Angular 9" src="https://miro.medium.com/max/1400/1*XlPBxiPbMQ_CNz-yH9YOLw.png" />
+  <!--src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="-->
+      </div>
+  
+    </div>
+  
+  </div>
